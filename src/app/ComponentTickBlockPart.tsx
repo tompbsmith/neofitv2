@@ -50,7 +50,7 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
             <div className="grid grid-cols-2 grid-rows-2 gap-2">
               {imageUrls.map((url, i) => {
                 return (
-                  <div className="relative">
+                  <div key={"gridImage" + 1} className="relative">
                     <Image className="grayscale max-w-[210px]" src={imageUrls[i]} alt={imageAlts[i]} width={320} height={240} />
                     <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                   </div>
