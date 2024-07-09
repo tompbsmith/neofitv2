@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { SectionPartHeaderBlue } from "./SectionPartHeaderBlue";
+import { SectionPartHeader } from "./SectionPartHeader";
 
 export function BlockAboutNeofit(props: any) {
     return (
         <div className="w-full bg-white justify-center flex">
             <div className="lg:w-[1280px] lg:py-16">
-                <SectionPartHeaderBlue title="About Neofit" colour="blue" />
+                <SectionPartHeader title={"About Neofit"} colour={"blue"} />
                 <div className="flex justify-between py-12 items-center">
                     <div className="basis-1/2">
                         <p className="paragraphSmaller">Neofit<span className="text-base lg:text-base align-super">&reg;</span>+Plus is a non-invasive, advanced pipe technology for the repair of underground water services with inside diameters of 1/2&quot; to 2&quot;.</p>

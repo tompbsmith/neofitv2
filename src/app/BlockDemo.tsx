@@ -1,12 +1,12 @@
 import { ComponentButton } from "./ComponentButton";
 import { ComponentVideo } from "./ComponentVideo";
-import { SectionPartHeaderBlue } from "./SectionPartHeaderBlue";
+import { SectionPartHeader } from "./SectionPartHeader";
 
 export function BlockDemo(props: any) {
     return (
         <div className="w-full bg-lightest-grey justify-center flex">
             <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12">
-                <SectionPartHeaderBlue title="Demo" />
+                <SectionPartHeader title={'Demo'} colour={"blue"} />
                 <h3 className="font-roboto font-bold text-3xl text-light-blue w-1/2">Watch how Neofit<span className="sm:text-base lg:text-lg relative -top-2">®</span>+Plus is easily installed beneath infrastructure with minimal disruption.</h3>
                 <ComponentVideo />
                 <div className="flex gap-x-8 justify-center">

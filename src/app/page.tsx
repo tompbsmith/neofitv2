@@ -4,6 +4,12 @@ import { BlockNavigation } from "./BlockNavigation";
 import { BlockHero } from "./BlockHero";
 import { BlockAboutNeofit } from "./BlockAboutNeofit";
 import { BlockDemo } from "./BlockDemo";
+import { BlockWhyNeofit } from "./BlockWhyNeofit";
+import { BlockCaseStudies } from "./BlockCaseStudies";
+import { BlockInstallation } from "./BlockInstallation";
+import { BlockGallery } from "./BlockGallery";
+import { BlockContact } from "./BlockContact";
+import { BlockFooter } from "./BlockFooter";
 
 export default function Home() {
   return (
@@ -12,6 +18,12 @@ export default function Home() {
       <BlockHero />
       <BlockAboutNeofit />
       <BlockDemo />
+      <BlockWhyNeofit title={"Why Neofit"} />
+      <BlockCaseStudies title={"Case Studies"} />
+      <BlockInstallation title="Installation" />
+      <BlockGallery title="Gallery" titleColour="blue" bgColour="bg-lightest-grey" />
+      <BlockContact title="Contact" />
+      <BlockFooter />
     </main>
   );
 }
