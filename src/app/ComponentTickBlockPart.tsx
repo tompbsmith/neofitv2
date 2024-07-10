@@ -43,7 +43,47 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
           )
         }
         {type == TypeTickBlockPart.table &&
-          table
+          <div className="flex lg:w-full items-center justify-center">
+            <table className="table-auto font-roboto text-grey text-md lg:text-lg border-spacing-1 border-separate bg-white">
+              <thead>
+                <tr>
+                  <th className="bg-lightest-grey text-center text-base" colSpan={2} rowSpan={2}>Life-cycle<br />stage</th>
+                  <th className="bg-lightest-grey text-center py-3 px-3 text-base" colSpan={2}>GHG Emissions <br /><span className="text-sm">(kg CO2eq/15m of replaced piping)</span></th>
+                </tr>
+                <tr>
+                  <th className="bg-lightest-grey text-center py-3 text-base">Neofit<span className="relative -top-2 text-xs lg:text-base">®</span>+Plus</th>
+                  <th className="bg-lightest-grey text-center text-base">Open-cut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base" colSpan={2}>Manufacturing</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">Neofit<span className="relative -top-2 text-xs lg:text-base">®</span>+Plus</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">Open-cut</td>
+                </tr>
+                <tr>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base" colSpan={2}>Upstream Transport</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">11</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">Life-113 stage</td>
+                </tr>
+                <tr>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base" colSpan={2}>Installation</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">0.08</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">0.64</td>
+                </tr>
+                <tr>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base" colSpan={2}>End-of-life</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">0.10</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base">0.09</td>
+                </tr>
+                <tr>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base font-bold" colSpan={2}>Total</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base font-bold">164</td>
+                  <td className="bg-table-light-grey p-2 lg:p-3 text-sm lg:text-base font-bold">1334</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         }
         {type == TypeTickBlockPart.multipleImages &&
           (
