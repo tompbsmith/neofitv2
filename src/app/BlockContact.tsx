@@ -117,18 +117,22 @@ export function BlockContact({ title }: IBlockContact) {
 
     }
 
+    const [showFormNotCompleteMessage, setShowFormNotCompleteMessage] = useState(false)
+
 
     return (
-        <div className="relative w-full bg-white justify-center flex">
+        <div className="relative w-full bg-white justify-center flex" id="contact">
             <div className="absolute top-0 left-0 w-full h-full">
                 <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
                 <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
             </div>
             <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12 z-20">
                 <SectionPartHeader title={title} colour={"white"} />
-                <h3 className="font-roboto font-bold text-3xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
-                <h3 className="font-roboto font-bold text-3xl text-white w-full">Alternatively, send us a brief message via the form below for a prompt response from one of our advisors.</h3>
-                <h3 className="font-roboto font-bold text-3xl text-white w-full">We look forward to hearing from you.</h3>
+                <div className="flex flex-col gap-y-4">
+                    <h3 className="font-roboto font-bold text-2xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
+                    <h3 className="font-roboto font-bold text-2xl text-white w-full">Alternatively, send us a brief message via the form below for a prompt response from one of our advisors.</h3>
+                    <h3 className="font-roboto font-bold text-2xl text-white w-full">We look forward to hearing from you.</h3>
+                </div>
 
                 <div ref={refContactBox} className="flex flex-col lg:min-h-[650px] lg:w-full items-center justify-center gap-y-24 px-8 py-8 lg:px-8 lg:py-20">
                     {contactMade ?

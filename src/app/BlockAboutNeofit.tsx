@@ -3,7 +3,7 @@ import { SectionPartHeader } from "./SectionPartHeader";
 
 export function BlockAboutNeofit(props: any) {
     return (
-        <div className="w-full bg-white justify-center flex">
+        <div className="w-full bg-white justify-center flex" id="about">
             <div className="lg:w-[1280px] lg:py-16">
                 <SectionPartHeader title={"About Neofit"} colour={"blue"} />
                 <div className="flex justify-between py-12 items-center">

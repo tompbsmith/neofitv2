@@ -14,17 +14,17 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
   const [showFrance, setShowFrance] = useState(true)
 
   return (
-    <div className="relative w-full bg-white justify-center flex">
+    <div className="relative w-full bg-white justify-center flex" id="case-studies">
       <div className="absolute top-0 left-0 w-full h-full">
         <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
         <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
       </div>
       <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12 z-20">
         <SectionPartHeader title={title} colour={"white"} />
-        <h3 className="font-roboto font-bold text-3xl text-white w-1/2">Prior to being introduced to the UK, Neofit®+Plus has been widely used across Europe for many years.</h3>
+        <h3 className="font-roboto font-bold text-2xl text-white w-1/2">Prior to being introduced to the UK, Neofit®+Plus has been widely used across Europe for many years.</h3>
         <div className="flex items-center gap-x-24">
           <div className="flex flex-col gap-y-24 shrink-0">
-            <div className="cursor-pointer transition-all flex items-center gap-x-6 border-2 border-transparent hover:border-white hover:bg-white hover:bg-opacity-15 p-6">
+            <div className="cursor-pointer transition-all flex items-center gap-x-6 border border-white bg-white bg-opacity-15 p-6">
               <Image src='/flag-france.png' alt={'french flag'} width={180} height={180} className='lg:w-[175px] lg:h-[175px] w-[128px]' />
               <div className="flex flex-col">
                 <p className="font-roboto text-white font-bold text-4xl">200,000+</p>
@@ -52,8 +52,8 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
           <div className="">
             {showFrance &&
               <div className={`bg-white bg-opacity-15 border border-white border-solid flex flex-col justify-center gap-y-8 px-6 py-12 items-center`}>
-                <h3 className={`font-roboto font-bold text-white text-4xl lg:text-4xl`}>Neofit<span className="relative -top-2 lg:-top-2">&reg;</span>+Plus in France</h3>
-                <p className="font-roboto font-medium text-white text-lg lg:text-2xl text-center">France alone has over 200,000 lead water services supported by Neofit®+Plus, exceeding 2,000 miles of pipe.</p>
+                <h3 className={`font-roboto font-bold text-white text-4xl lg:text-3xl`}>Neofit<span className="relative -top-2 lg:-top-2">&reg;</span>+Plus in France</h3>
+                <p className="font-roboto font-medium text-white text-lg lg:text-xl text-center">France alone has over 200,000 lead water services supported by Neofit®+Plus, exceeding 2,000 miles of pipe.</p>
                 <div className="flex flex-col lg:flex gap-y-4">
                   <div className="lg:w-full lg:flex items-center justify-center">
                     <table className="table-auto font-roboto text-white text-md lg:text-2xl border-spacing-1 lg:border-spacing-2 border-separate">

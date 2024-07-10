@@ -21,7 +21,7 @@ export default function Home() {
       <BlockWhyNeofit title={"Why Neofit"} />
       <BlockCaseStudies title={"Case Studies"} />
       <BlockInstallation title="Installation" />
-      <BlockGallery title="Gallery" titleColour="blue" bgColour="bg-lightest-grey" />
+      <BlockGallery title="Gallery" titleColour="blue" bgColour="bg-lightest-grey" images={['/why neofit 1.png', 'why neofit 2.png', 'why neofit 3.png',]} />
       <BlockContact title="Contact" />
       <BlockFooter />
     </main>

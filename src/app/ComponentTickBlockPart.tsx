@@ -30,8 +30,8 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
     <div className="flex items-center justify-between gap-4">
       <FontAwesomeIcon icon={faCircleCheck} className=" text-white w-12 h-12 lg:w-24 lg:h-24" />
       <div className="flex flex-col w-1/2 gap-y-9 justify-center grow-1">
-        <p className="font-roboto text-white text-4xl font-bold">{title}</p>
-        <p className="font-roboto text-white text-2xl font-semibold">{parse(text)}</p>
+        <p className="font-roboto text-white text-3xl font-bold">{title}</p>
+        <p className="font-roboto text-white text-xl font-semibold">{parse(text)}</p>
       </div>
       <div className="">
         {type == TypeTickBlockPart.singleImage &&
@@ -50,7 +50,7 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
             <div className="grid grid-cols-2 grid-rows-2 gap-2">
               {imageUrls.map((url, i) => {
                 return (
-                  <div key={"gridImage" + 1} className="relative">
+                  <div key={"gridImage" + i} className="relative">
                     <Image className="grayscale max-w-[210px]" src={imageUrls[i]} alt={imageAlts[i]} width={320} height={240} />
                     <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                   </div>

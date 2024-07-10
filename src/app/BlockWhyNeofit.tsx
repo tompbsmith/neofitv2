@@ -5,10 +5,10 @@ import { ComponentButton } from "./ComponentButton"
 
 export function BlockWhyNeofit({ title, parts }: { title: string, parts?: any }, ...props: any) {
   return (
-    <div className="w-full bg-light-blue bg-large-background bg-repeat bg-cover justify-center flex">
+    <div className="w-full bg-light-blue bg-large-background bg-repeat bg-cover justify-center flex" id="why-neofit">
       <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12">
         <SectionPartHeader title={'Why Neofit®+Plus?'} colour={'white'} />
-        <h3 className="font-roboto font-bold text-3xl text-white w-full">Neofit<span className="sm:text-base lg:text-lg align-super">®</span>+Plus is a minimally invasive, long-lasting solution for pipe rehabilitation and repair and can be installed in steel, copper, plastic and lead pipes in lengths up to 300ft. The smooth bore and thin-wall pipe of Neofit®+Plus provides the same or increased flow capacity and often only a single small access pit is required for installation.</h3>
+        <h3 className="font-roboto font-bold text-2xl text-white w-full">Neofit<span className="sm:text-base lg:text-lg align-super">®</span>+Plus is a minimally invasive, long-lasting solution for pipe rehabilitation and repair and can be installed in steel, copper, plastic and lead pipes in lengths up to 300ft. The smooth bore and thin-wall pipe of Neofit®+Plus provides the same or increased flow capacity and often only a single small access pit is required for installation.</h3>
         <div>
           <h4 className="font-roboto font-bold text-3xl text-white w-full"></h4>
           <p className="font-roboto font-bold text-2xl"></p>

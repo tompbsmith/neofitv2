@@ -6,7 +6,7 @@ export function BlockHero(props: any) {
     <div className="w-full flex flex-col lg:flex-row h-full space-0 gap-0 p-0 m-0">
       <div className="w-1/2 flex flex-col justify-center bg-light-blue bg-large-background gap-y-8 lg:px-16 lg:pt-12 lg:pb-24 h-full">
         <Image src="/neofit logo.png" alt={"neofit logo"} width={128} height={128} />
-        <h1 className="font-roboto text-white text-4xl lg:text-7xl font-bold text-balance">Neofit<span className="lg:text-3xl align-super">&reg;</span>+Plus Expandable Pressure Pipe <span className="text-2xl">(EPP)</span></h1>
+        <h1 className="font-roboto text-white text-4xl lg:text-7xl font-bold text-balance w-4/5">Neofit<span className="lg:text-3xl align-super">&reg;</span>+Plus Expandable Pressure Pipe <span className="text-2xl">(EPP)</span></h1>
         <h2 className="font-roboto text-white lg:text-4xl font-semibold text-balance">New to UK markets, the Neofit<span className="lg:text-2xl align-super">&reg;</span>+Plus<span className="text-xl align-super">&reg;</span> Expandable Pressure Pipe (EPP) is provided
           exclusively by <a className="underline" href='https://www.sanivar.co.uk' target='blank'>Sanivar UK</a>.</h2>
         <div className="flex gap-x-8">
