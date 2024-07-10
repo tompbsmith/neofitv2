@@ -58,9 +58,11 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
                   <div className="lg:w-full lg:flex items-center justify-center">
                     <table className="table-auto font-roboto text-white text-md lg:text-2xl border-spacing-1 lg:border-spacing-2 border-separate">
                       <thead>
-                        <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">City</th>
-                        <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white"># of Services</th>
-                        <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">Installer</th>
+                        <tr>
+                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">City</th>
+                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white"># of Services</th>
+                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">Installer</th>
+                        </tr>
                       </thead>
                       <tbody>
                         <tr>

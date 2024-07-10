@@ -17,11 +17,11 @@ export function BlockAboutNeofit(props: any) {
                     </div>
                     <div className="flex lg:flex-col justify-between items-center gap-y-12 basis-1/2">
                         <div className="relative lg:max-w-96">
-                            <Image className="grayscale" src="/about1.png" alt={"pipe"} width={640} height={320} />
+                            <Image className="grayscale" src="/about1-2.png" alt={"pipe"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                         </div>
                         <div className="relative lg:max-w-96">
-                            <Image className="grayscale" src="/about2.png" alt={"pipe"} width={640} height={320} />
+                            <Image className="grayscale" src="/about2-2.png" alt={"pipe"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                         </div>
                         <div className="relative lg:max-w-96">
