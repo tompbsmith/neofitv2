@@ -26,7 +26,7 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
     const [scrollDirection, setScrollDirection] = useState('none')
     const [maxHeight, setMaxHeight] = useState(0)
 
-    const spacing = 64;
+    const spacing = 24;
 
     function scrollImages(direction: any) {
         if (direction == 'none')
