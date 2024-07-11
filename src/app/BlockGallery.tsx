@@ -24,6 +24,7 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
     const [currentX, setCurrentX] = useState(0)
     const [currentI, setCurrentI] = useState(0);
     const [scrollDirection, setScrollDirection] = useState('none')
+    const [maxHeight, setMaxHeight] = useState(0)
 
     const spacing = 64;
 
@@ -44,19 +45,29 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
         console.log('currentI: ' + currentI)
 
         let w = refImages.current[currentI].current.offsetWidth;
+        let x = refImages.current[currentI].current.offsetLeft
 
         console.log("w: " + w);
+        console.log("x: " + x)
 
         if (currentI == 0) {
             setCurrentX(0)
         } else {
-            setCurrentX((currentI * -w) - spacing)
+            setCurrentX((currentI * -w) - (spacing * currentI))
         }
     }, [currentI])
 
     useEffect(() => {
-        console.log("currentX " + currentX)
-    }, [currentX])
+        refImages.current.forEach((item: any) => {
+            setMaxHeight(item.current.offsetHeight > maxHeight ? item.current.offsetHeight : maxHeight)
+        })
+
+        console.log("maxH: " + maxHeight)
+    }, [maxHeight])
+
+    // useEffect(() => {
+    //     console.log("currentX " + currentX)
+    // }, [currentX])
 
     // var settings = {
     //     dots: true,
@@ -83,14 +94,14 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
                 <div className="w-full overflow-hidden">
                     <div className="flex gap-x-16 w-screen">
                         {images.map((image: string, i: number) => (
-                            <motion.div className="relative w-[512px]"
+                            <motion.div className="relative max-w-[500px]"
                                 key={"image" + i}
                                 ref={refImages.current[i]}
                                 initial={{ x: 0 }}
                                 animate={{ x: currentX }}
                             >
                                 <img
-                                    className="grayscale object-cover" src={image} alt={"alt"}
+                                    className="grayscale object-fill" style={{ height: maxHeight > 0 ? maxHeight + "px" : 'inherit' }} src={image} alt={"alt"}
                                 />
                                 <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                             </motion.div>
@@ -110,9 +121,9 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
                     </div>
                 </div>
                 <div className="w-full flex items-center justify-center gap-x-8">
-                    <a className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(0)} style={{ opacity: currentI == 0 ? 1 : .5 }}></a>
-                    <a className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(1)} style={{ opacity: currentI == 1 ? 1 : .5 }}></a>
-                    <a className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(2)} style={{ opacity: currentI == 2 ? 1 : .5 }}></a>
+                    {images.map((image: string, i: number) => (
+                        <a className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(i)} style={{ opacity: currentI == i ? 1 : .5 }}></a>
+                    ))}
                 </div>
                 {/* <Slider {...settings} className="w-full mx-auto lg:w-3/5 lg:mx-auto my-12 lg:my-4">
                     <div className="flex items-center justify-center mx-auto w-1/2">
