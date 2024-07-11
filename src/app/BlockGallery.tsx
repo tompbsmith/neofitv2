@@ -122,7 +122,7 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
                 </div>
                 <div className="w-full flex items-center justify-center gap-x-8">
                     {images.map((image: string, i: number) => (
-                        <a className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(i)} style={{ opacity: currentI == i ? 1 : .5 }}></a>
+                        <a key={"galleryCircle" + i} className="cursor-pointer block rounded-full bg-light-blue w-6 h-6" onClick={() => setCurrentI(i)} style={{ opacity: currentI == i ? 1 : .5 }}></a>
                     ))}
                 </div>
                 {/* <Slider {...settings} className="w-full mx-auto lg:w-3/5 lg:mx-auto my-12 lg:my-4">
