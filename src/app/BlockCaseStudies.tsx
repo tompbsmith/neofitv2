@@ -134,12 +134,12 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
                 </div>
               </div>}
             {showGermany &&
-              <div className={`  flex flex-col bg-white bg-opacity-15 border border-white border-solid px-16 py-12 gap-y-8 w-full h-full items-center`}>
+              <div className={`  flex flex-col bg-white bg-opacity-15 border border-white border-solid px-16 py-12 gap-y-8 w-full h-full items-center justify-center`}>
                 <h3 className={` w-3/4 font-roboto font-bold text-white text-3xl text-center lg:text-center`}>Neofit®+Plus in Germany</h3>
                 <p className="w-full font-roboto font-medium text-white text-xl text-center lg:text-center">Local water supply Trinkwasserzweckverband Weißeritzgruppe in Freital, Germany, installed Neofit®+Plus in 1995 and is still in operation today.</p>
               </div>}
             {showNetherlands &&
-              <div className={`$ flex flex-col bg-white bg-opacity-15 border border-white border-solid px-6 py-12 gap-y-8 w-full h-full items-center`}>
+              <div className={`$ flex flex-col bg-white bg-opacity-15 border border-white border-solid px-6 py-12 gap-y-8 w-full h-full items-center justify-end`}>
                 <h3 className={` w-3/4 font-roboto font-bold text-white text-3xl text-center lg:text-center`}>Neofit®+Plus in The Netherlands and Belgium</h3>
                 <p className="w-full font-roboto font-medium text-white text-xl text-center lg:text-center">The Netherlands and Belgium have both been using Neofit®+Plus since 1995.</p>
               </div>}
