@@ -89,21 +89,21 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
 
     return (
         <div className={`w-full ${bgColour} justify-center flex`} id="gallery">
-            <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12">
-                <div className="lg:w-[1080px] self-center">
+            <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12">
+                <div className="">
                     <SectionPartHeader title={title} colour={titleColour} />
                 </div>
-                <div className=" overflow-hidden w-[1280px] self-start ms-[100px]">
-                    <div className="flex gap-x-16 w-screen">
+                <div className="overflow-hidden w-full">
+                    <div className="flex gap-x-6 w-screen">
                         {images.map((image: string, i: number) => (
-                            <motion.div className="relative max-w-[500px]"
+                            <motion.div className="relative w-[500px] max-w-[500px] min-w-[500px]"
                                 key={"image" + i}
                                 ref={refImages.current[i]}
                                 initial={{ x: 0 }}
                                 animate={{ x: currentX }}
                             >
                                 <img
-                                    className="grayscale object-fill" style={{ height: maxHeight > 0 ? maxHeight + "px" : 'inherit' }} src={image} alt={"alt"}
+                                    className="grayscale w-[500px] " style={{ height: maxHeight > 0 ? maxHeight + "px" : 'inherit' }} src={image} alt={"alt"}
                                 />
                                 <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                             </motion.div>
