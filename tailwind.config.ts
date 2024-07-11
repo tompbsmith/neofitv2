@@ -18,7 +18,7 @@ const config: Config = {
       fontFamily: {
         'merriweatherSans': ['var(--font-merriweathersans)'],
         'merriweather': ['var(--font-merriweather)'],
-        'roboto': ["Roboto", 'ui-sans-serif'],
+        'roboto': ['var(--font-roboto)', 'ui-sans-serif'],
       },
       colors: {
         'table-light-grey': '#F0F1F2',
