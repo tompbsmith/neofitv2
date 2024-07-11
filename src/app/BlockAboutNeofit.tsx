@@ -16,8 +16,8 @@ export function BlockAboutNeofit(props: any) {
                         <p className="paragraphSmaller">The product is durable and stays resistant to leaching, with structural material that has been scientifically evaluated for longevity of 100+ years. When tested in line with the American Water Work Association&apos;s field guide for the hydrostatic testing of water service lines, results showed 0% lead in the water post installation.</p>
                         <p className="paragraphSmaller">Neofit<span className="text-base lg:text-base align-super">&reg;</span>+Plus is part of Sanivar UK&apos;s range of trenchless rehabilitation solutions.</p>
                         <div className="flex gap-x-8 justify-start mt-12">
-                            <ComponentButton type='blue' text='Watch Demo' icon='demo' href="#why-neofit" />
-                            <ComponentButton type='blue' text='Contact' icon='email' href="#why-neofit" />
+                            <ComponentButton type='blue' text='Sanivar UK' icon='web' href="https://www.sanivar.co.uk/" targetBlank />
+                            <ComponentButton type='blue' text='Contact' icon='email' href="#contact" />
                         </div>
                     </div>
                     <div className="flex lg:flex-col justify-between items-start gap-y-12">

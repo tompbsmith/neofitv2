@@ -21,8 +21,8 @@ export function BlockInstallation({ title }: IBlockInstallation) {
                     <ComponentInstallationPart number={5} title={"Reconnecting"} text={"Then finally the lined host pipe can be reconnected to the water meter or other connection point in the house and to the water main, with Neofit fittings that attach to standard plumbing fittings. Reconnection is done in such a way that no water is in contact with the lead pipe and cannot penetrate between the liner and host pipe. In practice this process is quick, mainly automated and does not require a lot of preparation and time to complete. Depending on the layout at the site, the length of the host pipe etc, the whole process typically takes between 1 and 3 hours. In general the time that the customer is disconnected from the water main is not more than 45 minutes to 1 hour. The water main and the water meter or other convenient connection point within the house."} imageUrl={"/installation5.png"} imageAlt={"Installation Image #5"} />
                 </div>
                 <div className="flex gap-x-8 justify-center">
-                    <ComponentButton type='blue' text='Watch Demo' icon='demo' href="#why-neofit" />
-                    <ComponentButton type='blue' text='Contact' icon='email' href="#why-neofit" />
+                    <ComponentButton type='blue' text='Watch Demo' icon='demo' href="#demo" />
+                    <ComponentButton type='blue' text='Contact' icon='email' href="#contact" />
                 </div>
             </div>
         </div>

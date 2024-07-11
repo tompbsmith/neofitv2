@@ -22,8 +22,8 @@ export function BlockWhyNeofit({ title, parts }: { title: string, parts?: any },
           <ComponentTickBlockPart title={"Cost efficient"} text={"Neofit®+Plus can also provide significant cost savings of up to 85% when used in place of traditional dig-and-replace methods."} imageUrls={['/whyneofit7.png']} imageAlts={['box']} table={undefined} type={TypeTickBlockPart.singleImage} />
         </div>
         <div className="flex gap-x-8 justify-center">
-          <ComponentButton type='white' text='Watch Demo' icon='demo' href="#why-neofit" />
-          <ComponentButton type='white' text='Contact' icon='email' href="#why-neofit" />
+          <ComponentButton type='white' text='Watch Demo' icon='demo' href="#demo" />
+          <ComponentButton type='white' text='Contact' icon='email' href="#contact" />
         </div>
       </div>
     </div>
