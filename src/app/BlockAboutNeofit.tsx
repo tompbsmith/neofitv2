@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { SectionPartHeader } from "./SectionPartHeader";
 import { ComponentButton } from "./ComponentButton";
+import { Block } from "./Block";
+import { BlockInner } from "./BlockInner";
 
 export function BlockAboutNeofit(props: any) {
     return (
-        <div className="w-full bg-white justify-center flex" id="about">
-            <div className="lg:w-[1080px] lg:py-16">
+        <Block id="about" colour="white">
+            <BlockInner z={20}>
                 <SectionPartHeader title={"About Neofit"} colour={"blue"} />
-                <div className="flex justify-between py-12 items-start">
+                <div className="flex justify-between items-start">
                     <div className="basis-1/2 flex flex-col justify-between h-full">
                         <p className="paragraphSmaller">Neofit<span className="text-base lg:text-base align-super">&reg;</span>+Plus is a non-invasive, advanced pipe technology for the repair of underground water services with inside diameters of 1/2&quot; to 2&quot;.</p>
                         <p className="paragraphSmaller">Made of Virgin PET (Polyethylene Terephthalate), this innovative pipeline rehabilitation solution helps maintain the existing service pipe by creating a barrier inside and avoiding unnecessary replacement and extended disruption.</p>
@@ -35,7 +37,7 @@ export function BlockAboutNeofit(props: any) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </BlockInner>
+        </Block>
     );
 }

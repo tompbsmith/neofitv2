@@ -1,3 +1,5 @@
+import { Block } from "./Block"
+import { BlockInner } from "./BlockInner"
 import { ComponentButton } from "./ComponentButton"
 import { ComponentInstallationPart } from "./ComponentInstallationPart"
 import { SectionPartHeader } from "./SectionPartHeader"
@@ -8,8 +10,8 @@ interface IBlockInstallation {
 
 export function BlockInstallation({ title }: IBlockInstallation) {
     return (
-        <div className="w-full bg-white justify-center flex" id="installation">
-            <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12">
+        <Block id="installation" colour="white">
+            <BlockInner>
                 <SectionPartHeader title={"Installation"} colour={"blue"} />
                 <h3 className="font-roboto font-bold text-2xl text-light-blue w-full">The Neofit<span className="sm:text-base lg:text-lg align-super">®</span>+Plus System is a trusted solution for minimal disruption during installation, making it particularly suitable for pipelines running alongside other infrastructure such as under road crossings, in congested ground with other utilities and under residential dwellings.</h3>
                 <h3 className="font-roboto font-bold text-2xl text-light-blue w-full">Neofit<span className="sm:text-base lg:text-lg align-super">®</span>+Plus can effectively rehabilitate old deteriorating pipes and lines with leaching contaminants, such as lead and copper pipe, acting as a barrier to protect potable water.</h3>
@@ -24,7 +26,7 @@ export function BlockInstallation({ title }: IBlockInstallation) {
                     <ComponentButton type='blue' text='Watch Demo' icon='demo' href="#demo" />
                     <ComponentButton type='blue' text='Contact' icon='email' href="#contact" />
                 </div>
-            </div>
-        </div>
+            </BlockInner>
+        </Block>
     )
 }

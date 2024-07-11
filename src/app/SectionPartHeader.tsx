@@ -15,7 +15,7 @@ export function SectionPartHeader({ title, colour = 'blue' }: { title: string, c
 
     return (
         <motion.div className={`relative ${backgroundColour} flex items-center px-4 lg:px-8 lg:py-12  h-[80px] w-fit lg:min-h-[115px] lg:max-h-[115px]`}
-            initial={{ x: -50 }}
+            initial={{ x: -100 }}
             whileInView={{
                 x: 0,
                 transition: {

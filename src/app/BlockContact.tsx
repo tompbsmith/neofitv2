@@ -6,6 +6,9 @@ import { SectionPartHeader } from "./SectionPartHeader"
 import { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons"
+import { Block } from "./Block"
+import { BlockInner } from "./BlockInner"
+import { motion } from "framer-motion"
 
 interface IBlockContact {
     title: string
@@ -121,12 +124,12 @@ export function BlockContact({ title }: IBlockContact) {
 
 
     return (
-        <div className="relative w-full bg-white justify-center flex" id="contact">
+        <Block id="contact" colour="white">
             <div className="absolute top-0 left-0 w-full h-full">
                 <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
                 <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
             </div>
-            <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12 z-20">
+            <BlockInner z={20}>
                 <SectionPartHeader title={title} colour={"white"} />
                 <div className="flex flex-col gap-y-4">
                     <h3 className="font-roboto font-bold text-2xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
@@ -197,25 +200,25 @@ export function BlockContact({ title }: IBlockContact) {
                 </div>
 
                 <div className="flex items-center justify-center gap-16">
-                    <a className=" items-center justify-center flex flex-row font-roboto font-bold text-2xl lg:text-3xl text-white"
-
+                    <motion.a className=" items-center justify-center flex flex-row font-roboto font-bold text-2xl lg:text-3xl text-white"
                         href='tel:01670700498'
                         target="_blank"
+                        whileHover={{ scale: 1.05 }}
                     >
                         <FontAwesomeIcon icon={faPhone} className="w-7 lg:mr-4" />
                         01670 700498
-                    </a>
-                    <a className=" items-center justify-center flex flex-row font-roboto font-bold text-xl lg:text-3xl text-white"
-
+                    </motion.a>
+                    <motion.a className=" items-center justify-center flex flex-row font-roboto font-bold text-xl lg:text-3xl text-white"
                         href='mailto:enquiries@sanivar.co.uk'
                         target="_blank"
+                        whileHover={{ scale: 1.05 }}
                     >
                         <FontAwesomeIcon icon={faEnvelope} className="w-7 lg:mr-4" />
                         enquiries@sanivar.co.uk
-                    </a>
+                    </motion.a>
                 </div>
-            </div>
-        </div>
+            </BlockInner>
+        </Block>
     )
 }
 

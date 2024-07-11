@@ -1,9 +1,12 @@
+'use client'
+
 import Image from "next/image";
 
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 export interface ITickBlockPart {
   title: string,
@@ -11,7 +14,8 @@ export interface ITickBlockPart {
   imageUrls: string[],
   imageAlts: string[],
   table: any,
-  type: TypeTickBlockPart
+  type: TypeTickBlockPart,
+  number: number
 }
 
 export enum TypeTickBlockPart {
@@ -20,15 +24,29 @@ export enum TypeTickBlockPart {
   multipleImages
 }
 
-export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, table, type }: ITickBlockPart) {
+export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, table, type, number }: ITickBlockPart) {
 
   if (text.includes('®')) {
     text = text.replace('®', '<span className="relative -top-2 lg:-top-2">&reg;</span>');
   }
 
   return (
-    <div className="flex items-center justify-between gap-4">
-      <FontAwesomeIcon icon={faCircleCheck} className=" text-white w-12 h-12 lg:w-24 lg:h-24" />
+    <motion.div className="flex items-center justify-between gap-4"
+      initial={{
+        x: 50 * (number % 2 ? 1 : -1),
+        opacity: 0
+      }}
+      whileInView={{
+        x: 0,
+        opacity: 1,
+        transition: {
+          delay: .4,
+          duration: .5
+        }
+      }}
+      viewport={{ once: true }}
+    >
+      <FontAwesomeIcon icon={faCircleCheck} className=" text-white w-12 h-12 lg:w-24 lg:h-24 mr-4" />
       <div className="flex flex-col w-1/2 gap-y-9 justify-center grow-1">
         <p className="font-roboto text-white text-3xl font-bold">{title}</p>
         <p className="font-roboto text-white text-xl font-semibold">{parse(text)}</p>
@@ -101,6 +119,6 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
           )
         }
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -9,6 +9,8 @@ import { SectionPartHeader } from "./SectionPartHeader";
 import Slider from "react-slick"
 import { createRef, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Block } from "./Block";
+import { BlockInner } from "./BlockInner";
 
 interface IBlockGallery {
     title: string,
@@ -88,8 +90,8 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
     // };
 
     return (
-        <div className={`w-full ${bgColour} justify-center flex`} id="gallery">
-            <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12">
+        <Block id="gallery" colour="grey">
+            <BlockInner>
                 <div className="">
                     <SectionPartHeader title={title} colour={titleColour} />
                 </div>
@@ -138,7 +140,7 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
                         <img src={'/why neofit 3.png'} className="w-full" />
                     </div>
                 </Slider> */}
-            </div>
-        </div>
+            </BlockInner>
+        </Block>
     )
 }

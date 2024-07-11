@@ -1,6 +1,9 @@
+'use client'
+
 import Image from "next/image";
 
 import parse from "html-react-parser"
+import { motion } from "framer-motion";
 
 interface IComponentInstallationPart {
     number: number,
@@ -17,7 +20,20 @@ export function ComponentInstallationPart({ number, title, text, imageUrl, image
     }
 
     return (
-        <div className="flex justify-between py-6 gap-x-12 items-start">
+        <motion.div className="flex justify-between py-6 gap-x-12 items-start"
+            initial={{
+                y: -50,
+                opacity: 0
+            }}
+            whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                    delay: .4,
+                    duration: .5
+                }
+            }}
+            viewport={{ once: true }}>
             <div className="flex items-center justify-center p-4 bg-light-blue rounded-full w-16 h-16 shrink-0 self-start">
                 <p className="font-roboto text-4xl font-bold text-white">{number}</p>
             </div>
@@ -26,6 +42,6 @@ export function ComponentInstallationPart({ number, title, text, imageUrl, image
                 <p className="paragraphSmaller">{parse(text)}</p>
             </div>
             <Image className="w-[480px] h-[272px] self-center" src={imageUrl} alt={imageAlt} width={640} height={360} />
-        </div>
+        </motion.div>
     )
 }

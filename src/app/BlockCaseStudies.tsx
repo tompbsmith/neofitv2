@@ -4,6 +4,8 @@ import Image from "next/image"
 
 import { SectionPartHeader } from "./SectionPartHeader"
 import { useState } from "react"
+import { BlockInner } from "./BlockInner"
+import { Block } from "./Block"
 
 interface IBlockCaseStudies {
   title: string
@@ -16,12 +18,12 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
   const [showNetherlands, setShowNetherlands] = useState(false)
 
   return (
-    <div className="relative w-full bg-white justify-center flex" id="case-studies">
+    <Block id="case-studies" colour="white">
       <div className="absolute top-0 left-0 w-full h-full">
         <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
         <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
       </div>
-      <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12 z-20">
+      <BlockInner z={20}>
         <SectionPartHeader title={title} colour={"white"} />
         <h3 className="font-roboto font-bold text-2xl text-white w-1/2">Prior to being introduced to the UK, Neofit®+Plus has been widely used across Europe for many years.</h3>
         <div className="flex items-start gap-x-12">
@@ -48,7 +50,7 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
               style={{ border: showNetherlands ? 'solid white 1px' : '', background: showNetherlands ? 'rgba(255, 255, 255, .15' : '' }}
               onClick={() => { setShowFrance(false); setShowGermany(false); setShowNetherlands(true); }}>
               <div className="flex flex-col">
-                <Image src='/flag-belgium.png' alt={'french flag'} width={180} height={180} className='lg:w-[132px] w-[128px]' />
+                <Image src='/flag-belgium-resized.png' alt={'french flag'} width={180} height={180} className='lg:w-[132px] w-[128px]' />
                 <Image src='/flag-netherlands.png' alt={'french flag'} width={180} height={180} className='lg:w-[132px] w-[128px]' />
               </div>
               <div className="flex flex-col">
@@ -145,7 +147,7 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
               </div>}
           </div>
         </div>
-      </div>
-    </div>
+      </BlockInner>
+    </Block>
   )
 }
