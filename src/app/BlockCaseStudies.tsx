@@ -21,11 +21,11 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
         <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
         <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
       </div>
-      <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12 z-20">
+      <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12 z-20">
         <SectionPartHeader title={title} colour={"white"} />
         <h3 className="font-roboto font-bold text-2xl text-white w-1/2">Prior to being introduced to the UK, Neofit®+Plus has been widely used across Europe for many years.</h3>
-        <div className="flex items-center gap-x-24">
-          <div className="flex flex-col gap-y-24 shrink-0">
+        <div className="flex items-start gap-x-12">
+          <div className="flex flex-col gap-y-24 shrink-0 justify-start h-full">
             <div className="cursor-pointer transition-all flex items-center gap-x-6 p-6 border border-transparent"
               style={{ border: showFrance ? 'solid white 1px' : '', background: showFrance ? 'rgba(255, 255, 255, .15' : '' }}
               onClick={() => { setShowGermany(false); setShowNetherlands(false); setShowFrance(true) }}>
@@ -64,59 +64,59 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
                 <p className="font-roboto font-medium text-white text-lg lg:text-xl text-center">France alone has over 200,000 lead water services supported by Neofit®+Plus, exceeding 2,000 miles of pipe.</p>
                 <div className="flex flex-col lg:flex gap-y-4">
                   <div className="lg:w-full lg:flex items-center justify-center">
-                    <table className="table-auto font-roboto text-white text-md lg:text-2xl border-spacing-1 lg:border-spacing-2 border-separate">
+                    <table className="table-auto font-roboto text-white text-md lg:text-2xl border-spacing-1 lg:border-spacing-1 border-separate">
                       <thead>
                         <tr>
-                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">City</th>
-                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white"># of Services</th>
-                          <th className="bg-light-blue font-bold lg:text-xl lg:p-4 font-roboto text-white">Installer</th>
+                          <th className="bg-light-blue font-bold lg:text-base lg:p-4 font-roboto text-white">City</th>
+                          <th className="bg-light-blue font-bold lg:text-base lg:p-4 font-roboto text-white"># of Services</th>
+                          <th className="bg-light-blue font-bold lg:text-base lg:p-4 font-roboto text-white">Installer</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Monbéliard</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">450</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Generale des Eaux</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Monbéliard</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">450</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Generale des Eaux</td>
                         </tr>
                         <tr>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Dole</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">200</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">SNCTP</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Dole</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">200</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">SNCTP</td>
                         </tr>
                         <tr>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Orléans/Chateaudun</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl ">300</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">SAUR</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Orléans/Chateaudun</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base ">300</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">SAUR</td>
                         </tr>
                         <tr>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">LaTour du Pin</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">300</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Fournier TP</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">LaTour du Pin</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">300</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Fournier TP</td>
                         </tr>
                         <tr>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Vichy</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl ">200</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">CBSE</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Vichy</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base ">200</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">CBSE</td>
                         </tr>
                         <tr>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Cahors</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">300</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Capraro & Dubreuilh</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Cahors</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">300</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Capraro & Dubreuilh</td>
                         </tr>
                         <tr>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Chalons-in-Champagne</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl ">100</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Nord Est TP</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Chalons-in-Champagne</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base ">100</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Nord Est TP</td>
                         </tr>
                         <tr>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Lons-le-Saunier</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">100</td>
-                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Service des Eaux</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Lons-le-Saunier</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">100</td>
+                          <td className="bg-lightest-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Service des Eaux</td>
                         </tr>
                         <tr>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Pontarlier</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl ">200</td>
-                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-xl">Sté Toubin</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Pontarlier</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base ">200</td>
+                          <td className="bg-lighter-blue text-white font-roboto p-2 lg:p-4 text-sm lg:text-base">Sté Toubin</td>
                         </tr>
                       </tbody>
                     </table>

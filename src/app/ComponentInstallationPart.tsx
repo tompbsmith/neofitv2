@@ -17,15 +17,15 @@ export function ComponentInstallationPart({ number, title, text, imageUrl, image
     }
 
     return (
-        <div className="flex justify-between py-6 gap-x-12">
-            <div className="flex items-center justify-center p-4 bg-light-blue rounded-full w-16 h-16 shrink-0">
+        <div className="flex justify-between py-6 gap-x-12 items-start">
+            <div className="flex items-center justify-center p-4 bg-light-blue rounded-full w-16 h-16 shrink-0 self-start">
                 <p className="font-roboto text-4xl font-bold text-white">{number}</p>
             </div>
-            <div className="flex flex-col gap-y-3">
+            <div className="flex flex-col gap-y-3 grow basis-2/3">
                 <h4 className="font-roboto text-4xl font-bold text-light-blue">{title}</h4>
                 <p className="paragraphSmaller">{parse(text)}</p>
             </div>
-            <Image src={imageUrl} alt={imageAlt} width={640} height={360} />
+            <Image className="w-[480px] h-[272px] self-center" src={imageUrl} alt={imageAlt} width={640} height={360} />
         </div>
     )
 }

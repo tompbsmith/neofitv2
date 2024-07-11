@@ -90,8 +90,10 @@ export function BlockGallery({ title, titleColour, bgColour, images }: IBlockGal
     return (
         <div className={`w-full ${bgColour} justify-center flex`} id="gallery">
             <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12">
-                <SectionPartHeader title={title} colour={titleColour} />
-                <div className="w-full overflow-hidden">
+                <div className="lg:w-[1080px] self-center">
+                    <SectionPartHeader title={title} colour={titleColour} />
+                </div>
+                <div className=" overflow-hidden w-[1280px] self-start ms-[100px]">
                     <div className="flex gap-x-16 w-screen">
                         {images.map((image: string, i: number) => (
                             <motion.div className="relative max-w-[500px]"

@@ -5,7 +5,7 @@ import { ComponentButton } from "./ComponentButton";
 export function BlockAboutNeofit(props: any) {
     return (
         <div className="w-full bg-white justify-center flex" id="about">
-            <div className="lg:w-[1280px] lg:py-16">
+            <div className="lg:w-[1080px] lg:py-16">
                 <SectionPartHeader title={"About Neofit"} colour={"blue"} />
                 <div className="flex justify-between py-12 items-start">
                     <div className="basis-1/2 flex flex-col justify-between h-full">
@@ -20,7 +20,7 @@ export function BlockAboutNeofit(props: any) {
                             <ComponentButton type='blue' text='Contact' icon='email' href="#why-neofit" />
                         </div>
                     </div>
-                    <div className="flex lg:flex-col justify-between items-center gap-y-12 basis-1/2">
+                    <div className="flex lg:flex-col justify-between items-start gap-y-12">
                         <div className="relative lg:max-w-96">
                             <Image className="grayscale" src="/about2-2.png" alt={"pipe"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>

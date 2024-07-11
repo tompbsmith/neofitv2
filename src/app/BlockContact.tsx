@@ -126,7 +126,7 @@ export function BlockContact({ title }: IBlockContact) {
                 <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
                 <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
             </div>
-            <div className="lg:w-[1280px] lg:py-16 flex flex-col gap-y-12 z-20">
+            <div className="lg:w-[1080px] lg:py-16 flex flex-col gap-y-12 z-20">
                 <SectionPartHeader title={title} colour={"white"} />
                 <div className="flex flex-col gap-y-4">
                     <h3 className="font-roboto font-bold text-2xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
