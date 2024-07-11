@@ -143,11 +143,13 @@ export function BlockContact({ title }: IBlockContact) {
                         </div>
                         :
                         <form className="flex flex-col gap-y-12 lg:w-2/3 lg:px-8">
-                            <div className="flex flex-col lg:flex-row w-full justify-start">
-                                <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Name:</label>
-                                <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
-                                    onChange={(event) => { setContactFormName(event.target.value); }}
-                                />
+                            <div className="relative">
+                                <div className="flex flex-col lg:flex-row w-full justify-start">
+                                    <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Name:</label>
+                                    <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
+                                        onChange={(event) => { setContactFormName(event.target.value); }}
+                                    />
+                                </div>
                                 {clickedContactForm && contactFormNameBlank && <><p className='text-white text-base lg:text-base lg:text-end mt-2'>Name field required.</p></>}
                             </div>
                             <div className='relative'>
