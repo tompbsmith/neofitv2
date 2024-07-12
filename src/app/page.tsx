@@ -58,32 +58,38 @@ export default function Home() {
 
   //screensize
 
-  const [screenSize, setScreenSize] = useState({
-    width: window ? window.innerWidth : 2000,
-    height: window ? window.innerHeight : 2000,
-  });
+  const useScreenSize = () => {
+    const [screenSize, setScreenSize] = useState({
+      width: window ? window.innerWidth : 2000,
+      height: window ? window.innerHeight : 2000,
+    });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenSize({
-        width: window ? window.innerWidth : 2000,
-        height: window ? window.innerHeight : 2000,
-      });
-    };
+    useEffect(() => {
+      const handleResize = () => {
+        setScreenSize({
+          width: window ? window.innerWidth : 2000,
+          height: window ? window.innerHeight : 2000,
+        });
+      };
 
-    if (window) {
-      window.addEventListener('resize', handleResize);
-    }
-
-
-    // Clean up the event listener when the component unmounts
-    return () => {
       if (window) {
-        window.removeEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize);
       }
 
-    };
-  }, []);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        if (window) {
+          window.removeEventListener('resize', handleResize);
+        }
+
+      };
+    }, []);
+
+    return screenSize;
+  };
+
+  const screenSize = useScreenSize()
 
   return (
     <main className="w-full flex-col p-0 m-0 bg-white">
