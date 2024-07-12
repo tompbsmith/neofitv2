@@ -24,15 +24,15 @@ export function BlockAboutNeofit(props: any) {
                     </div>
                     <div className="order-1 lg:order-2 flex lg:flex-col justify-between items-start gap-y-12">
                         <div className="hidden lg:block relative lg:max-w-96">
-                            <Image className="grayscale w-full" src="/about2-2.png" alt={"pipe"} width={640} height={320} />
+                            <Image className="grayscale w-full" src="/about 1 final.png" alt={"woman drinking a glass of water"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                         </div>
                         <div className="hidden lg:block relative lg:max-w-96">
-                            <Image className="grayscale" src="/about4-2.png" alt={"pipe"} width={640} height={320} />
+                            <Image className="grayscale" src="/about 2 final.png" alt={"neofit pipes"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                         </div>
                         <div className=" lg:block relative lg:max-w-96">
-                            <Image className="grayscale" src="/about3.png" alt={"pipe"} width={640} height={320} />
+                            <Image className="grayscale" src="/about 3 final.png" alt={"plumber working under sink"} width={640} height={320} />
                             <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
                         </div>
                     </div>

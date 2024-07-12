@@ -52,7 +52,7 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
   return (
     <Block id="case-studies" colour="white">
       <div className="absolute top-0 left-0 w-full h-full">
-        <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/caseStudiesBackground.png'} alt={'pipe work'} width={2246} height={1526} />
+        <Image className="absolute top-0 left-0 object-cover opacity-25 h-full" src={'/background-image.jpg'} alt={'plumber fixing pipework'} width={2246} height={1526} />
         <div className="absolute top-0 left-0 w-full h-full bg-light-blue opacity-60 z-10"></div>
       </div>
       <BlockInner z={20}>

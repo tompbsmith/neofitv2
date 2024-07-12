@@ -16,7 +16,7 @@ export function BlockHero(props: any) {
         </div>
       </div>
       <div className="basis-1/2 relative flex-1"> {/* why does adding h-full here make it less tall? */}
-        <Image className="w-full h-full object-cover grayscale" src="/hero image 3-2.png" alt={"water"} width={960} height={960} />
+        <Image className="w-full h-full object-cover grayscale" src="/hero image final.png" alt={"water droplet and ripples"} width={960} height={960} />
         <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
       </div>
     </div>
