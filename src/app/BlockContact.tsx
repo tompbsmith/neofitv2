@@ -10,6 +10,8 @@ import { Block } from "./Block"
 import { BlockInner } from "./BlockInner"
 import { motion } from "framer-motion"
 
+import axios from 'axios'
+
 interface IBlockContact {
     title: string
 }
@@ -84,7 +86,7 @@ export function BlockContact({ title }: IBlockContact) {
         }
     }
 
-    function doContactForm() {
+    function doContactForm(): boolean {
         let success = true;
 
         if (contactFormName === '') {
@@ -97,7 +99,6 @@ export function BlockContact({ title }: IBlockContact) {
 
         if (contactFormEmail === '') {
             success = false;
-
             setContactFormEmailMessage('Email field is required.');
         } else {
             if (!emailValidation()) {
@@ -112,15 +113,59 @@ export function BlockContact({ title }: IBlockContact) {
 
         setClickedContactForm(true)
 
-        if (success) {
-            setTimeout(() => setContactMade(true), 800)
+        //if any errors return
+        if (!success) {
+            console.log('validation error')
+            return false
         } else {
-            setShowFormNotCompleteMessage(true)
+            console.log('completed validation')
+            return true
         }
-
     }
 
     const [showFormNotCompleteMessage, setShowFormNotCompleteMessage] = useState(false)
+
+    //formspree
+    const [serverState, setServerState] = useState({
+        submitting: false,
+        status: {}
+    });
+    const handleServerResponse = (ok: any, msg: any, form: any) => {
+        setServerState({
+            submitting: false,
+            status: { ok, msg }
+        });
+        if (ok) {
+            form.reset();
+        }
+
+        console.log(msg)
+    };
+    const handleOnSubmit = (e: any) => {
+
+        console.log('started submission');
+
+        e.preventDefault();
+
+        if (doContactForm()) {
+            const form = e.target;
+            setServerState({ submitting: true, status: {} });
+            axios({
+                method: "post",
+                url: "https://formspree.io/mzzpzebl",
+                data: new FormData(form)
+            })
+                .then(r => {
+                    handleServerResponse(true, "Thanks!", form);
+                    setContactMade(true)
+                    console.log('completed submission');
+                })
+                .catch(r => {
+                    handleServerResponse(false, r.response.data.error, form);
+                    console.log('error submission');
+                });
+        }
+    };
 
 
     return (
@@ -139,17 +184,17 @@ export function BlockContact({ title }: IBlockContact) {
 
                 <div ref={refContactBox} className="flex flex-col lg:min-h-[650px] lg:w-full items-center justify-center gap-y-24 y-8 lg:px-8 lg:py-20">
                     {contactMade ?
-                        <div className="flex flex-col w-full items-center justify-center gap-y-4 lg:gap-y-8">
-                            <p className="font-roboto text-white text-center font-semibold text-2xl lg:text-4xl">
+                        <div className="flex flex-col w-full items-center justify-center lg:gap-y-8">
+                            <p className="font-roboto text-white text-center font-semibold text-2xl lg:text-4xl mt-8 mb-4 lg:mt-0 lg:mb-0">
                                 Thank you, we&apos;ll be in touch soon
                             </p>
                         </div>
                         :
-                        <form className="flex flex-col gap-y-12 w-full px-8 mt-8 lg:mt-0 lg:w-2/3 lg:px-8">
+                        <form className="flex flex-col gap-y-12 w-full px-8 mt-8 lg:mt-0 lg:w-2/3 lg:px-8" onSubmit={handleOnSubmit}>
                             <div className="relative">
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
                                     <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Name:</label>
-                                    <input className="font-roboto text-white font-medium text-lg lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
+                                    <input name="name" className="font-roboto text-white font-medium text-lg lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
                                         onChange={(event) => { setContactFormName(event.target.value); }}
                                     />
                                 </div>
@@ -158,7 +203,7 @@ export function BlockContact({ title }: IBlockContact) {
                             <div className='relative'>
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
                                     <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Company:</label>
-                                    <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
+                                    <input name="company" className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
                                         onChange={(event) => setContactFormCompany(event.target.value)}
                                     />
                                 </div>
@@ -167,7 +212,7 @@ export function BlockContact({ title }: IBlockContact) {
                             <div>
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
                                     <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Email:</label>
-                                    <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="email"
+                                    <input name="email" className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="email"
                                         onChange={(event) => setContactFormEmail(event.target.value)}
                                     />
                                 </div>
@@ -175,24 +220,22 @@ export function BlockContact({ title }: IBlockContact) {
                             </div>
                             <div className="flex flex-col lg:flex-row w-full justify-start">
                                 <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Telephone:</label>
-                                <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="tel"
+                                <input name="telephone" className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="tel"
                                     onChange={(event) => setContactFormTelephone(event.target.value)}
                                 />
                             </div>
                             <div className="flex flex-col lg:flex-row w-full justify-start">
                                 <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-start mb-4 lg:mb-0">Message:</label>
-                                <textarea className="font-roboto text-white font-normal lg:font-normal text-lg lg:text-base border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 lg:px-2 lg:py-1 focus-visible:outline-none h-[150px] lg:h-[150px]"
+                                <textarea name="message" className="font-roboto text-white font-normal lg:font-normal text-lg lg:text-base border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 lg:px-2 lg:py-1 focus-visible:outline-none h-[150px] lg:h-[150px]"
                                     onChange={(event) => setContactFormMessage(event.target.value)}
                                 ></textarea>
                             </div>
                             <div className="w-full flex items-center justify-center">
-                                <a className="flex w-fit transition-all items-center justify-center font-roboto font-bold text-2xl bg-white lg:border-2 border-white border-solid p-4  text-light-blue hover:bg-light-blue hover:border-2 hover:border-white hover:text-white"
-
-                                    href='#submit'
-                                    onClick={() => doContactForm()}
+                                <button className="flex w-fit transition-all items-center justify-center font-roboto font-bold text-2xl bg-white lg:border-2 border-white border-solid p-4  text-light-blue hover:bg-light-blue hover:border-2 hover:border-white hover:text-white"
+                                    type="submit" disabled={serverState.submitting}
                                 >
                                     Submit Form
-                                </a>
+                                </button>
                             </div>
                         </form>
                     }
