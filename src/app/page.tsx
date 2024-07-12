@@ -22,6 +22,7 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { useIsClient } from "./is-client-ctx";
 
 import { useWindowWidth } from '@react-hook/window-size'
+import { BlockContainer } from "./BlockContainer";
 
 export default function Home() {
 
@@ -85,7 +86,7 @@ export default function Home() {
       </motion.div>
 
       <BlockNavigation setTopOffset={setTopOffset} />
-      <div className={`relative w-full`} style={{ top: isMobile || windowWidth < 1024 ? topOffset + 'px' : '0px' }}>
+      <BlockContainer>
         <BlockHero />
         {/* <p>{windowWidth}</p> */}
         <BlockAboutNeofit />
@@ -96,7 +97,7 @@ export default function Home() {
         <BlockGallery title="Gallery" titleColour="blue" bgColour="bg-lightest-grey" images={['/why neofit 1.png', '/why neofit 2.png', '/why neofit 3.png']} />
         <BlockContact title="Contact" />
         <BlockFooter />
-      </div>
+      </BlockContainer>
     </main>
   );
 }
