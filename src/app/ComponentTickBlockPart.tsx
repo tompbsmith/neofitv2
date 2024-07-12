@@ -32,7 +32,7 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
   }
 
   return (
-    isMobile && <motion.div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-4"
+    <motion.div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-4"
       initial={{
         // x: 50 * (number % 2 ? 1 : -1),
         opacity: 0
