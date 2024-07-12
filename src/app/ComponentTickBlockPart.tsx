@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import parse from "html-react-parser"
 import { motion } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 export interface ITickBlockPart {
   title: string,
@@ -31,13 +32,13 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
   }
 
   return (
-    <motion.div className="flex items-center justify-between gap-4"
+    isMobile && <motion.div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-4"
       initial={{
-        x: 50 * (number % 2 ? 1 : -1),
+        // x: 50 * (number % 2 ? 1 : -1),
         opacity: 0
       }}
       whileInView={{
-        x: 0,
+        // x: 0,
         opacity: 1,
         transition: {
           delay: .4,
@@ -46,16 +47,23 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
       }}
       viewport={{ once: true }}
     >
-      <FontAwesomeIcon icon={faCircleCheck} className=" text-white w-12 h-12 lg:w-24 lg:h-24 mr-4" />
-      <div className="flex flex-col w-1/2 gap-y-9 justify-center grow-1">
-        <p className="font-roboto text-white text-3xl font-bold">{title}</p>
-        <p className="font-roboto text-white text-xl font-semibold">{parse(text)}</p>
+      <FontAwesomeIcon icon={faCircleCheck} className="hidden lg:inherit text-white w-12 h-12 lg:w-24 lg:h-24 mr-4" />
+      <div className="lg:hidden flex gap-x-4 items-center">
+        <FontAwesomeIcon icon={faCircleCheck} className="hidden text-white w-12 h-12 lg:w-24 lg:h-24 mr-4" />
+        <div className="flex flex-col lg:w-1/2 gap-y-2 lg:gap-y-9 justify-center grow-1">
+          <p className="font-roboto text-white text-3xl lg:text-3xl font-bold">{title}</p>
+          <p className="font-roboto text-white text-lg lg:text-xl font-semibold">{parse(text)}</p>
+        </div>
+      </div>
+      <div className="hidden lg:flex flex-col lg:w-1/2 gap-y-2 lg:gap-y-9 justify-center grow-1">
+        <p className="font-roboto text-white text-3xl lg:text-3xl font-bold">{title}</p>
+        <p className="font-roboto text-white text-lg lg:text-xl font-semibold">{parse(text)}</p>
       </div>
       <div className="">
         {type == TypeTickBlockPart.singleImage &&
           (
             <div className="relative">
-              <Image className="grayscale max-w-[420px]" src={imageUrls[0]} alt={imageAlts[0]} width={640} height={480} />
+              <Image className="grayscale lg:max-w-[420px]" src={imageUrls[0]} alt={imageAlts[0]} width={640} height={480} />
               <div className="absolute top-0 left-0 w-full h-full opacity-40 bg-light-blue z-10"></div>
             </div>
           )
@@ -120,5 +128,6 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
         }
       </div>
     </motion.div>
+
   )
 }

@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export function BlockFooter() {
     return (
         <footer className="flex flex-col max-w-full w-full lg:items-center" >
-            <div className="lg:flex bg-white max-w-full w-full flex-row justify-between py-20 px-8 lg:max-w-[1280px]">
-                <div className="flex ps-7 lg:ps-0">
+            <div className="lg:flex bg-white max-w-full w-full flex-row justify-between py-12 lg:py-20 lg:px-8 lg:max-w-[1280px]">
+                <div className="flex ps-7 lg:ps-0 mb-8 lg:mb-0">
                     <a className="" href="#top">
                         <Image src='/logo header.png' alt={"Sanivar Logo"} width={207} height={100} />
                     </a>

@@ -132,12 +132,12 @@ export function BlockContact({ title }: IBlockContact) {
             <BlockInner z={20}>
                 <SectionPartHeader title={title} colour={"white"} />
                 <div className="flex flex-col gap-y-4">
-                    <h3 className="font-roboto font-bold text-2xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
-                    <h3 className="font-roboto font-bold text-2xl text-white w-full">Alternatively, send us a brief message via the form below for a prompt response from one of our advisors.</h3>
-                    <h3 className="font-roboto font-bold text-2xl text-white w-full">We look forward to hearing from you.</h3>
+                    <h3 className="font-roboto font-bold text-xl lg:text-2xl text-white w-full">Please get in touch for more product information, advice or to request a quote for your project.</h3>
+                    <h3 className="font-roboto font-bold text-xl lg:text-2xl text-white w-full">Alternatively, send us a brief message via the form below for a prompt response from one of our advisors.</h3>
+                    <h3 className="font-roboto font-bold text-xl lg:text-2xl text-white w-full">We look forward to hearing from you.</h3>
                 </div>
 
-                <div ref={refContactBox} className="flex flex-col lg:min-h-[650px] lg:w-full items-center justify-center gap-y-24 px-8 py-8 lg:px-8 lg:py-20">
+                <div ref={refContactBox} className="flex flex-col lg:min-h-[650px] lg:w-full items-center justify-center gap-y-24 y-8 lg:px-8 lg:py-20">
                     {contactMade ?
                         <div className="flex flex-col w-full items-center justify-center gap-y-4 lg:gap-y-8">
                             <p className="font-roboto text-white text-center font-semibold text-2xl lg:text-4xl">
@@ -145,11 +145,11 @@ export function BlockContact({ title }: IBlockContact) {
                             </p>
                         </div>
                         :
-                        <form className="flex flex-col gap-y-12 lg:w-2/3 lg:px-8">
+                        <form className="flex flex-col gap-y-12 w-full px-8 mt-8 lg:mt-0 lg:w-2/3 lg:px-8">
                             <div className="relative">
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
-                                    <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Name:</label>
-                                    <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
+                                    <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Name:</label>
+                                    <input className="font-roboto text-white font-medium text-lg lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
                                         onChange={(event) => { setContactFormName(event.target.value); }}
                                     />
                                 </div>
@@ -157,7 +157,7 @@ export function BlockContact({ title }: IBlockContact) {
                             </div>
                             <div className='relative'>
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
-                                    <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Company:</label>
+                                    <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Company:</label>
                                     <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none"
                                         onChange={(event) => setContactFormCompany(event.target.value)}
                                     />
@@ -166,7 +166,7 @@ export function BlockContact({ title }: IBlockContact) {
                             </div>
                             <div>
                                 <div className="flex flex-col lg:flex-row w-full justify-start">
-                                    <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Email:</label>
+                                    <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Email:</label>
                                     <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="email"
                                         onChange={(event) => setContactFormEmail(event.target.value)}
                                     />
@@ -174,19 +174,19 @@ export function BlockContact({ title }: IBlockContact) {
                                 {clickedContactForm && (contactFormEmailBlank || contactFormEmailInvalid) && <><p className='text-white text-base lg:text-base lg:text-end mt-2'>{contactFormEmailMessage}</p></>}
                             </div>
                             <div className="flex flex-col lg:flex-row w-full justify-start">
-                                <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Telephone:</label>
+                                <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-center mb-4 lg:mb-0">Telephone:</label>
                                 <input className="font-roboto text-white font-medium text-2xl lg:text-xl border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none" type="tel"
                                     onChange={(event) => setContactFormTelephone(event.target.value)}
                                 />
                             </div>
                             <div className="flex flex-col lg:flex-row w-full justify-start">
-                                <label className="font-roboto font-bold text-2xl lg:text-xl text-white lg:w-1/3 lg:self-start mb-4 lg:mb-0">Message:</label>
-                                <textarea className="font-roboto text-white font-medium lg:font-normal text-2xl lg:text-base border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 px-2 py-1 focus-visible:outline-none h-[150px] lg:h-[150px]"
+                                <label className="font-roboto font-bold text-xl lg:text-xl text-white lg:w-1/3 lg:self-start mb-4 lg:mb-0">Message:</label>
+                                <textarea className="font-roboto text-white font-normal lg:font-normal text-lg lg:text-base border-0 border-b-2 bg-transparent border-b-white w-full lg:w-2/3 lg:px-2 lg:py-1 focus-visible:outline-none h-[150px] lg:h-[150px]"
                                     onChange={(event) => setContactFormMessage(event.target.value)}
                                 ></textarea>
                             </div>
                             <div className="w-full flex items-center justify-center">
-                                <a className="flex w-fit transition-all items-center justify-center font-roboto font-bold text-2xl bg-white border-2 border-white border-solid p-4  text-light-blue hover:bg-light-blue hover:border-2 hover:border-white hover:text-white"
+                                <a className="flex w-fit transition-all items-center justify-center font-roboto font-bold text-2xl bg-white lg:border-2 border-white border-solid p-4  text-light-blue hover:bg-light-blue hover:border-2 hover:border-white hover:text-white"
 
                                     href='#submit'
                                     onClick={() => doContactForm()}
@@ -199,7 +199,7 @@ export function BlockContact({ title }: IBlockContact) {
 
                 </div>
 
-                <div className="flex items-center justify-center gap-16">
+                <div className="mt-8 lg:mt-0 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-16">
                     <motion.a className=" items-center justify-center flex flex-row font-roboto font-bold text-2xl lg:text-3xl text-white"
                         href='tel:01670700498'
                         target="_blank"

@@ -20,7 +20,7 @@ export function ComponentInstallationPart({ number, title, text, imageUrl, image
     }
 
     return (
-        <motion.div className="flex justify-between py-6 gap-x-12 items-start"
+        <motion.div className="flex flex-col lg:flex-row justify-between lg:py-6 gap-y-4 lg:gap-x-12 items-start"
             initial={{
                 y: -50,
                 opacity: 0
@@ -34,14 +34,17 @@ export function ComponentInstallationPart({ number, title, text, imageUrl, image
                 }
             }}
             viewport={{ once: true }}>
-            <div className="flex items-center justify-center p-4 bg-light-blue rounded-full w-16 h-16 shrink-0 self-start">
-                <p className="font-roboto text-4xl font-bold text-white">{number}</p>
+            <div className="flex flex-row lg:flex-col items-center gap-x-4">
+                <div className="flex items-center justify-center p-4 bg-light-blue rounded-full w-16 h-16 shrink-0 self-start">
+                    <p className="font-roboto text-4xl font-bold text-white">{number}</p>
+                </div>
+                <h4 className="lg:hidden font-roboto text-4xl font-bold text-light-blue">{title}</h4>
             </div>
-            <div className="flex flex-col gap-y-3 grow basis-2/3">
-                <h4 className="font-roboto text-4xl font-bold text-light-blue">{title}</h4>
+            <div className="order-2 flex flex-col gap-y-2 lg:gap-y-3 lg:grow lg:basis-2/3">
+                <h4 className="hidden lg:inherit font-roboto text-4xl font-bold text-light-blue">{title}</h4>
                 <p className="paragraphSmaller">{parse(text)}</p>
             </div>
-            <Image className="w-[480px] h-[272px] self-center" src={imageUrl} alt={imageAlt} width={640} height={360} />
+            <Image className="lg:w-[480px] lg:h-[272px] self-center" src={imageUrl} alt={imageAlt} width={640} height={360} />
         </motion.div>
     )
 }

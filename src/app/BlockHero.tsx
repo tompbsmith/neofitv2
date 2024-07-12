@@ -1,15 +1,17 @@
 import Image from "next/image";
 import { ComponentButton } from "./ComponentButton";
 
+import { isMobile } from 'react-device-detect';
+
 export function BlockHero(props: any) {
   return (
-    <div className="w-full flex flex-col lg:flex-row h-full space-0 gap-0 p-0 m-0">
-      <div className="basis-1/2 flex flex-col justify-center bg-light-blue bg-large-background gap-y-8 lg:px-16 lg:pt-12 lg:pb-24 flex-1">
-        <Image src="/neofit logo.png" alt={"neofit logo"} width={128} height={128} />
+    <div className="relative w-full flex flex-col lg:flex-row h-full space-0 gap-0 p-0 m-0">
+      <div className="basis-1/2 flex flex-col justify-center bg-light-blue bg-large-background gap-y-6 lg:gap-y-8 px-8 pt-8 pb-8 lg:px-16 lg:pt-12 lg:pb-24 flex-1">
+        <Image className="w-[72px] h-[72px] lg:w-[128px] lg:h-[128px]" src="/neofit logo.png" alt={"neofit logo"} width={128} height={128} />
         <h1 className="font-roboto text-white text-4xl lg:text-6xl font-bold text-balance w-full">Neofit<span className="lg:text-3xl align-super">&reg;</span>+Plus Expandable Pressure Pipe <span className="text-2xl">(EPP)</span></h1>
         <h2 className="font-roboto text-white lg:text-3xl font-semibold text-balance">New to UK markets, the Neofit<span className="lg:text-2xl align-super">&reg;</span>+Plus<span className="text-xl align-super">&reg;</span> Expandable Pressure Pipe (EPP) is provided
           exclusively by <a className="underline" href='https://www.sanivar.co.uk' target='blank'>Sanivar UK</a>.</h2>
-        <div className="flex gap-x-8">
+        <div className="flex gap-x-4 lg:gap-x-8">
           <ComponentButton type='white' text='Watch Demo' icon='demo' href="#demo" />
           <ComponentButton type='white' text='Why Neofit' icon='drop' href="#why-neofit" />
         </div>
