@@ -3,9 +3,10 @@
 import Image from "next/image"
 
 import { SectionPartHeader } from "./SectionPartHeader"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BlockInner } from "./BlockInner"
 import { Block } from "./Block"
+import { isMobile } from "react-device-detect"
 
 interface IBlockCaseStudies {
   title: string
@@ -16,6 +17,37 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
   const [showFrance, setShowFrance] = useState(true)
   const [showGermany, setShowGermany] = useState(false)
   const [showNetherlands, setShowNetherlands] = useState(false)
+
+  const refGermany = useRef<HTMLDivElement>(null)
+  const refOther = useRef<HTMLDivElement>(null)
+
+  function scrollToGermany() {
+    setTimeout(() => {
+      if (isMobile) {
+        window.scrollBy({
+          top: refGermany.current ? refGermany.current.getBoundingClientRect().top - 100 : 0,
+          left: 0,
+          behavior: "smooth"
+        })
+
+        console.log('scrolling to germany')
+      }
+    }, 50);
+  }
+
+  function scrollToOther() {
+    setTimeout(() => {
+      if (isMobile) {
+        window.scrollBy({
+          top: refOther.current ? refOther.current.getBoundingClientRect().top - 100 : 0,
+          left: 0,
+          behavior: "smooth"
+        })
+
+        console.log('scrolling to germany')
+      }
+    }, 50);
+  }
 
   return (
     <Block id="case-studies" colour="white">
@@ -112,9 +144,9 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
                   </div>
                 </div>}
             </div>
-            <div className="cursor-pointer transition-all flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 p-6 lg:gap-x-6 lg:p-6 border border-transparent hover:border-white hover:bg-white hover:bg-opacity-15"
+            <div ref={refGermany} className="cursor-pointer transition-all flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 p-6 lg:gap-x-6 lg:p-6 border border-transparent hover:border-white hover:bg-white hover:bg-opacity-15"
               style={{ border: showGermany ? 'solid white 1px' : '', background: showGermany ? 'rgba(255, 255, 255, .15' : '' }}
-              onClick={() => { setShowNetherlands(false); setShowFrance(false); setShowGermany(true); }}>
+              onClick={() => { setShowNetherlands(false); setShowFrance(false); setShowGermany(true); scrollToGermany(); }}>
               <Image src='/flag-germany.png' alt={'french flag'} width={180} height={180} className='lg:w-[175px] lg:h-[175px] w-[128px]' />
               <div className="flex flex-col">
                 <p className="font-roboto text-white font-bold text-4xl text-center lg:text-start uppercase">Since 2004</p>
@@ -126,9 +158,9 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
                   <p className="w-full font-roboto font-medium text-white text-xl text-center lg:text-center">Local water supply Trinkwasserzweckverband Weißeritzgruppe in Freital, Germany, installed Neofit®+Plus in 1995 and is still in operation today.</p>
                 </div>}
             </div>
-            <div className="cursor-pointer transition-all flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 p-6 lg:gap-x-6 lg:p-6 border border-transparent hover:border-white hover:bg-white hover:bg-opacity-15"
+            <div ref={refOther} className="cursor-pointer transition-all flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 p-6 lg:gap-x-6 lg:p-6 border border-transparent hover:border-white hover:bg-white hover:bg-opacity-15"
               style={{ border: showNetherlands ? 'solid white 1px' : '', background: showNetherlands ? 'rgba(255, 255, 255, .15' : '' }}
-              onClick={() => { setShowFrance(false); setShowGermany(false); setShowNetherlands(true); }}>
+              onClick={() => { setShowFrance(false); setShowGermany(false); setShowNetherlands(true); scrollToOther(); }}>
               <div className="flex flew-row items-center gap-x-2 lg:flex-col">
                 <Image src='/flag-belgium-resized.png' alt={'french flag'} width={180} height={180} className='lg:w-[132px] w-[128px] h-[94px]' />
                 <Image src='/flag-netherlands.png' alt={'french flag'} width={180} height={180} className='lg:w-[132px] w-[128px]' />
