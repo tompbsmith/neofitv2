@@ -13,7 +13,7 @@ import { BlockGallery } from "./BlockGallery";
 import { BlockContact } from "./BlockContact";
 import { BlockFooter } from "./BlockFooter";
 
-import useScreenSize from '../useScreenSize'
+import useScreenSize from './useScreenSize'
 
 import { isMobile } from 'react-device-detect';
 import { useEffect, useRef, useState } from "react";
