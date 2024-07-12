@@ -35,10 +35,12 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
     <motion.div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-4"
       initial={{
         // x: 50 * (number % 2 ? 1 : -1),
+        y: -50,
         opacity: 0
       }}
       whileInView={{
         // x: 0,
+        y: 0,
         opacity: 1,
         transition: {
           delay: .4,
