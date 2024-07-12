@@ -10,7 +10,7 @@ export function BlockDemo(props: any) {
             <BlockInner>
                 <SectionPartHeader title={'Demo'} colour={"blue"} />
                 <h3 className="font-roboto font-bold text-xl lg:text-2xl text-light-blue w-full">Watch how Neofit<span className="sm:text-base lg:text-lg relative -top-2">®</span>+Plus is easily installed beneath infrastructure with minimal disruption.</h3>
-                <ComponentVideo />
+                <ComponentVideo showVideo={props.showVideo} />
                 <div className="flex gap-x-8 justify-center">
                     <ComponentButton type='blue' text='Why Neofit' icon='drop' href="#why-neofit" />
                 </div>

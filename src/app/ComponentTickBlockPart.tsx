@@ -128,6 +128,5 @@ export function ComponentTickBlockPart({ title, text, imageUrls, imageAlts, tabl
         }
       </div>
     </motion.div>
-
   )
 }

@@ -7,7 +7,7 @@ import { BlockInner } from "./BlockInner";
 export function BlockAboutNeofit(props: any) {
     return (
         <Block id="about" colour="white">
-            <BlockInner z={20}>
+            <BlockInner>
                 <SectionPartHeader title={"About Neofit"} colour={"blue"} />
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-y-8 lg:gap-y-0">
                     <div className="order-2 lg:order-1 basis-1/2 flex flex-col justify-between h-full">
