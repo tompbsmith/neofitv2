@@ -13,13 +13,12 @@ import { BlockGallery } from "./BlockGallery";
 import { BlockContact } from "./BlockContact";
 import { BlockFooter } from "./BlockFooter";
 
-import useScreenSize from './useScreenSize'
-
 import { isMobile } from 'react-device-detect';
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { useIsClient } from "./is-client-ctx";
 
 
 export default function Home() {
@@ -58,7 +57,7 @@ export default function Home() {
     }
   }, [currentVideoUrl])
 
-  const screenSize = useScreenSize()
+  const isClient = useIsClient()
 
   return (
     <main className="w-full flex-col p-0 m-0 bg-white">
@@ -82,7 +81,7 @@ export default function Home() {
       </motion.div>
 
       <BlockNavigation setTopOffset={setTopOffset} />
-      <div className="relative w-full" style={{ top: isMobile || screenSize.width < 1024 ? topOffset + 'px' : '0px' }}>
+      <div className="relative w-full" style={{ top: isMobile || (isClient && window.innerWidth < 1024) ? topOffset + 'px' : '0px' }}>
         <BlockHero />
         <BlockAboutNeofit />
         <BlockDemo showVideo={showVideo} />
