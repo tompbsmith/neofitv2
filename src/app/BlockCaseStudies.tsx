@@ -27,7 +27,7 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
         <SectionPartHeader title={title} colour={"white"} />
         <h3 className="font-roboto font-bold text-xl lg:text-2xl text-white lg:w-1/2">Prior to being introduced to the UK, Neofit®+Plus has been widely used across Europe for many years.</h3>
         <div className="flex flex-col lg:flex-row items-start lg:gap-x-12">
-          <div className="flex flex-col gap-y-12 lg:gap-y-24 shrink-0 justify-start lg:h-full lg:flex-1">
+          <div className="flex flex-col gap-y-12 lg:gap-y-24 shrink-0 justify-start lg:justify-between lg:h-full lg:grow-1">
             <div className="cursor-pointer transition-all flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-x-4 p-2 lg:gap-x-6 lg:p-6 border border-transparent hover:border-white hover:bg-white hover:bg-opacity-15"
               style={{ border: showFrance ? 'solid white 1px' : '', background: showFrance ? 'rgba(255, 255, 255, .15' : '' }}
               onClick={() => { setShowGermany(false); setShowNetherlands(false); setShowFrance(true) }}>
@@ -146,7 +146,7 @@ export function BlockCaseStudies({ title }: IBlockCaseStudies) {
           </div>
           <div className="hidden lg:h-full lg:flex items-start lg:flex-1">
             {showFrance &&
-              <div className={`bg-white bg-opacity-15 border border-white border-solid flex flex-col justify-center gap-y-8 px-6 py-12 items-center h-full`}>
+              <div className={`bg-white bg-opacity-15 border border-white border-solid flex flex-col justify-center gap-y-6 px-6 py-8 items-center h-full`}>
                 <h3 className={`font-roboto font-bold text-white text-4xl lg:text-3xl justify-self-start`}>Neofit<span className="relative -top-2 lg:-top-2">&reg;</span>+Plus in France</h3>
                 <p className="font-roboto font-medium text-white text-lg lg:text-xl text-center">France alone has over 200,000 lead water services supported by Neofit®+Plus, exceeding 2,000 miles of pipe.</p>
                 <div className="flex flex-col lg:flex gap-y-4">
