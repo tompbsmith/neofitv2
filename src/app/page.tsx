@@ -19,6 +19,10 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
+import { useIsClient } from "./is-client-ctx";
+
+import { useWindowWidth } from '@react-hook/window-size'
+
 export default function Home() {
 
   const [topOffset, setTopOffset] = useState(0)
@@ -28,6 +32,8 @@ export default function Home() {
   const refVideo: any = useRef(null)
   const [currentVideoUrl, setCurrentVideoUrl] = useState("")
   const [showVideoLightBox, setShowVideoLightbox] = useState(false)
+
+  const windowWidth = useWindowWidth()
 
   function showVideo(url: any) {
 
@@ -55,6 +61,8 @@ export default function Home() {
     }
   }, [currentVideoUrl])
 
+  // const isClient = useIsClient()
+
   return (
     <main className="w-full flex-col p-0 m-0 bg-white">
 
@@ -77,8 +85,9 @@ export default function Home() {
       </motion.div>
 
       <BlockNavigation setTopOffset={setTopOffset} />
-      <div className={`relative w-full`} style={{ top: isMobile ? topOffset + 'px' : '0px' }}>
+      <div className={`relative w-full`} style={{ top: isMobile || windowWidth < 1024 ? topOffset + 'px' : '0px' }}>
         <BlockHero />
+        {/* <p>{windowWidth}</p> */}
         <BlockAboutNeofit />
         <BlockDemo showVideo={showVideo} />
         <BlockWhyNeofit title={"Why Neofit"} />
