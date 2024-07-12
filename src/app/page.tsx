@@ -56,6 +56,29 @@ export default function Home() {
     }
   }, [currentVideoUrl])
 
+  //screensize
+
+  const [screenSize, setScreenSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <main className="w-full flex-col p-0 m-0 bg-white">
 
@@ -78,7 +101,7 @@ export default function Home() {
       </motion.div>
 
       <BlockNavigation setTopOffset={setTopOffset} />
-      <div className="relative w-full" style={{ top: isMobile ? topOffset + 'px' : '0px' }}>
+      <div className="relative w-full" style={{ top: isMobile || screenSize.width < 1024 ? topOffset + 'px' : '0px' }}>
         <BlockHero />
         <BlockAboutNeofit />
         <BlockDemo showVideo={showVideo} />
