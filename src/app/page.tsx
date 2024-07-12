@@ -13,6 +13,8 @@ import { BlockGallery } from "./BlockGallery";
 import { BlockContact } from "./BlockContact";
 import { BlockFooter } from "./BlockFooter";
 
+import useScreenSize from '../useScreenSize'
+
 import { isMobile } from 'react-device-detect';
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -55,39 +57,6 @@ export default function Home() {
       refVideo.current.load()
     }
   }, [currentVideoUrl])
-
-  //screensize
-
-  const useScreenSize = () => {
-    const [screenSize, setScreenSize] = useState({
-      width: window ? window.innerWidth : 2000,
-      height: window ? window.innerHeight : 2000,
-    });
-
-    useEffect(() => {
-      const handleResize = () => {
-        setScreenSize({
-          width: window ? window.innerWidth : 2000,
-          height: window ? window.innerHeight : 2000,
-        });
-      };
-
-      if (window) {
-        window.addEventListener('resize', handleResize);
-      }
-
-
-      // Clean up the event listener when the component unmounts
-      return () => {
-        if (window) {
-          window.removeEventListener('resize', handleResize);
-        }
-
-      };
-    }, []);
-
-    return screenSize;
-  };
 
   const screenSize = useScreenSize()
 
