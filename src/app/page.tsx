@@ -59,23 +59,29 @@ export default function Home() {
   //screensize
 
   const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window ? window.innerWidth : 2000,
+    height: window ? window.innerHeight : 2000,
   });
 
   useEffect(() => {
     const handleResize = () => {
       setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window ? window.innerWidth : 2000,
+        height: window ? window.innerHeight : 2000,
       });
     };
 
-    window.addEventListener('resize', handleResize);
+    if (window) {
+      window.addEventListener('resize', handleResize);
+    }
+
 
     // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (window) {
+        window.removeEventListener('resize', handleResize);
+      }
+
     };
   }, []);
 
