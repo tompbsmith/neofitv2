@@ -42,9 +42,15 @@ export default function Home() {
 
   function showVideo(url: any) {
 
-    if (url != null && url.length > 0) {
-      setCurrentVideoUrl(url)
-      setShowVideoLightbox(true)
+    if(isSafari && isMobile) {
+      setCurrentVideoUrl(videomp4);
+      setShowVideoLightbox(true);
+    }
+    else {
+      if (url != null && url.length > 0) {
+        setCurrentVideoUrl(url)
+        setShowVideoLightbox(true)
+      }
     }
   }
 
