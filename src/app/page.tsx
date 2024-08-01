@@ -24,6 +24,8 @@ import { useIsClient } from "./is-client-ctx";
 import { useWindowWidth } from '@react-hook/window-size'
 import { BlockContainer } from "./BlockContainer";
 
+import { isMobile, isSafari } from 'react-device-detect';
+
 export default function Home() {
 
   const [topOffset, setTopOffset] = useState(0)
@@ -80,9 +82,16 @@ export default function Home() {
             icon={faClose} className="mt-2 w-3/4 h-3/4 text-white"
           />
         </div>
-        <video ref={refVideo} className="" controls autoPlay playsInline style={{ height: "100%" }}>
-          <source ref={refVideoSource} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+        {(isMobile && isSafari) ?
+          <video ref={refVideo} className="" controls autoPlay playsInline muted style={{ height: "100%" }}>
+          <source ref={"https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4"} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
         </video>
+        :
+        <video ref={refVideo} className="" controls autoPlay playsInline style={{ height: "100%" }}>
+          <source ref={refVideoSource} src="" type="video/webm" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+          <source ref={"https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4"} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+        </video>
+        }
       </motion.div>
 
       <BlockNavigation setTopOffset={setTopOffset} />
