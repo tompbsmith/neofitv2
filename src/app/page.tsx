@@ -36,6 +36,8 @@ export default function Home() {
   const [currentVideoUrl, setCurrentVideoUrl] = useState("")
   const [showVideoLightBox, setShowVideoLightbox] = useState(false)
 
+  let refVideoMP = "https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4";
+
   const windowWidth = useWindowWidth()
 
   function showVideo(url: any) {
@@ -84,12 +86,12 @@ export default function Home() {
         </div>
         {(isMobile && isSafari) ?
           <video ref={refVideo} className="" controls autoPlay playsInline muted style={{ height: "100%" }}>
-          <source ref={"https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4"} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+          <source ref={refVideoMP} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
         </video>
         :
         <video ref={refVideo} className="" controls autoPlay playsInline style={{ height: "100%" }}>
           <source ref={refVideoSource} src="" type="video/webm" style={{ transform: "translate3d(0, 0, 0)" }}></source>
-          <source ref={"https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4"} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+          <source ref={refVideoMP} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
         </video>
         }
       </motion.div>
