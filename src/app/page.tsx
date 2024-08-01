@@ -68,6 +68,9 @@ export default function Home() {
 
   // const isClient = useIsClient()
 
+  console.log('isSafari: ' + isSafari);
+  console.log('isMobile: ' + isMobile);
+
   return (
     <main className="w-full flex-col p-0 m-0 bg-white">
 
