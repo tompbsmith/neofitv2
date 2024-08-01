@@ -13,7 +13,7 @@ import { BlockGallery } from "./BlockGallery";
 import { BlockContact } from "./BlockContact";
 import { BlockFooter } from "./BlockFooter";
 
-import { isMobile } from 'react-device-detect';
+//import { isMobile } from 'react-device-detect';
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
