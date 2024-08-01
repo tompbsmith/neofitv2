@@ -36,7 +36,7 @@ export default function Home() {
   const [currentVideoUrl, setCurrentVideoUrl] = useState("")
   const [showVideoLightBox, setShowVideoLightbox] = useState(false)
 
-  let refVideoMP = "https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4";
+  const refVideoMP = "https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4";
 
   const windowWidth = useWindowWidth()
 
