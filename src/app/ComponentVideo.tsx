@@ -19,7 +19,7 @@ export function ComponentVideo(props: any) {
                 }}
 
                 // whileHover={'hovered'}
-                onClick={() => props.showVideo('/Neofit Demo Animation S2 - 48.webm')}
+                onClick={() => props.showVideo('https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4')}
             >
                 {/* <Image className="lg:w-full" src='/video dummy.png' alt={'video'} width={1200} height={600} /> */}
                 <div className="relative">
