@@ -86,7 +86,7 @@ export default function Home() {
         </div>
         {(isMobile && isSafari) ?
           <video ref={refVideo} className="" controls autoPlay playsInline muted style={{ height: "100%" }}>
-          <source ref={refVideoSource} src="https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+          <source src="https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
         </video>
         :
         <video ref={refVideo} className="" controls autoPlay playsInline style={{ height: "100%" }}>
