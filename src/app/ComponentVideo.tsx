@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faPlay } from "@fortawesome/free-solid-svg-icons";
 
+//onClick={() => props.showVideo('https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4')}
+
 export function ComponentVideo(props: any) {
 
     return (
@@ -19,7 +21,8 @@ export function ComponentVideo(props: any) {
                 }}
 
                 // whileHover={'hovered'}
-                onClick={() => props.showVideo('/Neofit Demo Animation S2 - 48.webm')}
+                
+            onClick={() => props.showVideo('/Neofit Demo Animation S2 - 48.mp4')}
             >
                 {/* <Image className="lg:w-full" src='/video dummy.png' alt={'video'} width={1200} height={600} /> */}
                 <div className="relative">
