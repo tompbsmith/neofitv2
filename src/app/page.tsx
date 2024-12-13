@@ -13,7 +13,7 @@ import { BlockGallery } from "./BlockGallery";
 import { BlockContact } from "./BlockContact";
 import { BlockFooter } from "./BlockFooter";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile, isSafari } from 'react-device-detect';
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,13 +34,22 @@ export default function Home() {
   const [currentVideoUrl, setCurrentVideoUrl] = useState("")
   const [showVideoLightBox, setShowVideoLightbox] = useState(false)
 
+  // const videomp4 = "https://s3-us-west-2.amazonaws.com/converterpoint-22/encodings/e96d689a68a59259b82b35348390cafa.mp4";
+  const videomp4 = "/Neofit Demo Animation S2 - 48.mp4";
+
   const windowWidth = useWindowWidth()
 
   function showVideo(url: any) {
 
-    if (url != null && url.length > 0) {
-      setCurrentVideoUrl(url)
-      setShowVideoLightbox(true)
+    if (isSafari && isMobile) {
+      setCurrentVideoUrl(videomp4);
+      setShowVideoLightbox(true);
+    }
+    else {
+      if (url != null && url.length > 0) {
+        setCurrentVideoUrl(url)
+        setShowVideoLightbox(true)
+      }
     }
   }
 
