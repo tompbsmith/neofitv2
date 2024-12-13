@@ -81,7 +81,7 @@ export default function Home() {
           />
         </div>
         <video ref={refVideo} className="" controls autoPlay playsInline style={{ height: "100%" }}>
-          <source ref={refVideoSource} src="" type="video/mp4" style={{ transform: "translate3d(0, 0, 0)" }}></source>
+          <source ref={refVideoSource} src="" type="video/webm" style={{ transform: "translate3d(0, 0, 0)" }}></source>
         </video>
       </motion.div>
 
